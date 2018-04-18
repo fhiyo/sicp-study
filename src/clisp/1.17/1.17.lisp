@@ -1,0 +1,12 @@
+(defun double (a)
+  (+ a a))
+(defun halve (a)
+  (assert (evenp a))
+  (/ a 2))
+
+(defun my-mul (a b)
+  (if (< b 0)
+    (progn (setq a (- a (+ a a))) (setq b (- b (+ b b)))))
+  (cond ((= b 0) 0)
+        ((evenp b) (double (my-mul a (halve b))))
+        (t (+ a (my-mul a (1- b))))))
