@@ -5,7 +5,7 @@
         ((evenp c) (fib-iter a
                              b
                              (+ (* p p) (* q q))
-                             (+ (* 2 (* p q)) (* q q))
+                             (+ (* 2 p q) (* q q))
                              (/ c 2)))
         (t (fib-iter (+ (* b q) (* a q) (* a p))
                      (+ (* b p) (* a q))
